@@ -1,0 +1,141 @@
+.movie-detail {
+  font-size: 1.3rem;
+  color: $white;
+  &__top {
+    min-height: calc(100vh - 70px);
+  }
+  &__top-wrapper {
+    min-height: calc(100vh - 70px);
+    background-image: linear-gradient(
+      to right,
+      rgba(12.94%, 14.9%, 22.75%, 1) 150px,
+      rgba(20.39%, 22.35%, 29.02%, 0.74) 100%
+    );
+    display: flex;
+  }
+  &__poster {
+    margin: 40px 0 0 80px;
+  }
+  &__image {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  &__info {
+    margin: 40px 40px 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  &__name {
+    cursor: pointer;
+  }
+
+  &__facts {
+    margin-top: 10px;
+  }
+  &__year {
+    color: $main-color;
+    padding-left: 5px;
+  }
+
+  &__release {
+    padding: 5px;
+  }
+  &__genres {
+    margin-left: 15px;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -14px;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      border-radius: 50%;
+      background: $main-color;
+    }
+  }
+  &__runtime {
+    padding: 5px;
+    margin-left: 15px;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -14px;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      border-radius: 50%;
+      background: $main-color;
+    }
+  }
+  &__rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 4px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 50%;
+    border: 3px solid $green;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+      transition: 0.3s all ease;
+    }
+  }
+  &__tagline {
+    font-style: italic;
+    color: $grey;
+  }
+  &__about {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  &__title {
+    color: $main-color;
+  }
+  &__overwiev {
+    max-width: 90%;
+    line-height: 1.7;
+    text-align: start;
+    margin-top: 10px;
+  }
+  &__production-countries {
+    margin-top: 20px;
+    color: $grey;
+  }
+  &__production-companies {
+    margin-top: 20px;
+    color: $grey;
+  }
+  &__back {
+    width: 150px;
+    height: 50px;
+    background: $white;
+    border: none;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      background: $main-color;
+      color: $white;
+      transition: 0.4s all ease;
+    }
+  }
+}

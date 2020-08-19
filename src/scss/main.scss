@@ -1,0 +1,35 @@
+@import "./variables";
+@import "./base/general";
+@import "./base/fonts";
+@import "./variables";
+@import "./components/header.scss";
+@import "./components/home.scss";
+@import "./components/movie-detail.scss";
+@import "./components/movies.scss";
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+//movies-empty
+.movies-empty {
+  &__title {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
