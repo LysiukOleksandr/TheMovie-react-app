@@ -1,13 +1,13 @@
 import React from "react";
 
-const Home = () => {
+const About = () => {
   return (
     <div>
-      <div className="home">
+      <div className="about">
         <div className="container">
-          <div className="home-wrapper">
+          <div className="about-wrapper">
             <svg
-              className="home__image"
+              className="about__image"
               id="a767eac7-073f-42f5-be07-7b01228cc98c"
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
@@ -237,12 +237,12 @@ const Home = () => {
               <circle cx="791.07556" cy="206.37952" r="9" fill="#6c63ff" />
               <circle cx="677.07556" cy="368.37952" r="9" fill="#6c63ff" />
             </svg>
-            <h1 className="home__title">Hello everyone!</h1>
-            <p className="home__subtitle">
+            <h1 className="about__title">Hello everyone!</h1>
+            <p className="about__subtitle">
               This is a simple ReactJS application, where you can find movies
               and serials.
             </p>
-            <p className="home__about-author">by Oleksandr Lysiuk</p>
+            <p className="about__about-author">by Oleksandr Lysiuk</p>
           </div>
         </div>
       </div>
@@ -250,4 +250,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default About;

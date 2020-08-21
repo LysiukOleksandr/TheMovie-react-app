@@ -24,17 +24,22 @@
       display: flex;
     }
 
-    &__list li:hover a {
-      color: $black;
-      transition: 0.5s all ease;
+    &__list li {
+      &:hover a {
+        color: $black;
+        transition: 0.5s all ease;
+      }
     }
-
     &__list a {
       color: $white;
     }
 
-    &__list li:not(:last-child) {
-      margin-right: 100px;
+    &__list {
+      li {
+        &:not(:last-child) {
+          margin-right: 100px;
+        }
+      }
     }
   }
 }

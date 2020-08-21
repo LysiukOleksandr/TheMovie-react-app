@@ -1,24 +1,14 @@
 import React from "react";
-
+import { Navigation } from "./";
+import { Link } from "react-router-dom";
+import headerLogo from "../assets/img/logo.png";
 const Header = () => {
   return (
     <div className="header">
-      <a className="header-logo" href="#">
-        <img className="header-logo__image" src="./img/png/logo.png" alt="" />
-      </a>
-      <div className="header-nav">
-        <ul className="header-nav__list">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Movies</a>
-          </li>
-          <li>
-            <a href="#">Serials</a>
-          </li>
-        </ul>
-      </div>
+      <Link className="header-logo" to="/">
+        <img className="header-logo__image" src={headerLogo} alt="" />
+      </Link>
+      <Navigation />
     </div>
   );
 };

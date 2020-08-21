@@ -1,4 +1,4 @@
-.movie-detail {
+.movie-details {
   font-size: 1.3rem;
   color: $white;
   &__top {
@@ -26,7 +26,7 @@
     margin: 40px 40px 0 60px;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
   &__name {
     cursor: pointer;
@@ -103,7 +103,7 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
   &__title {
     color: $main-color;
