@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-function SortPopup({ items, onClickSort }) {
+function SortPopup({ items }) {
   const [visiblePopup, setVisiblePopup] = React.useState();
   const sortRef = React.useRef();
   const toggleVisiblePopup = (e) => {
@@ -18,6 +18,9 @@ function SortPopup({ items, onClickSort }) {
 
   React.useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
   });
 
   return (

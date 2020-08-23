@@ -1,14 +1,12 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { SortPopup } from "../components";
 import { fetchMovies } from "../redux/actions/search";
-
+import { useDispatch } from "react-redux";
 // items in SortPopup component
 
 const items = [
   { name: "Popular", type: " popular" },
   { name: "Rating", type: "rating" },
-  { name: "Alphabete", type: "alphabete" },
 ];
 
 function SearchMenu() {
@@ -21,13 +19,10 @@ function SearchMenu() {
   const onChangeInputValue = (e) => {
     setInputValue(e.target.value);
   };
+
   const onClickButton = () => {
     dispatch(fetchMovies(inputValue));
   };
-
-  React.useEffect(() => {
-    dispatch(fetchMovies(""));
-  }, []);
 
   return (
     <>
@@ -40,7 +35,7 @@ function SearchMenu() {
           value={inputValue}
           onChange={onChangeInputValue}
         />
-        <div className="search-block__button" onClick={onClickButton}>
+        <div className="search-block__button" onClick={() => onClickButton()}>
           <svg
             width="40px"
             height="40px"
@@ -80,4 +75,5 @@ function SearchMenu() {
   );
 }
 
+// { name: "Alphabete", type: "alphabete" },
 export default SearchMenu;

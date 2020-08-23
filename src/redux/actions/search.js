@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const setMovies = (value) => ({
+export const setMovies = (inputValue) => ({
   type: "SET_MOVIES",
-  payload: value,
+  payload: inputValue,
 });
 
 export const isFetching = (boolValue) => ({
@@ -12,10 +12,6 @@ export const isFetching = (boolValue) => ({
 
 export const fetchMovies = (searchValue) => (dispatch) => {
   dispatch(isFetching(true));
-
-  if (searchValue === "") {
-    console.log("clear");
-  }
 
   // AXIOS GET request.
   // if searchValue is empty,we search 'TOP POPULAR' movies, otherwise we do usual request.

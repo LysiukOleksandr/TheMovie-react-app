@@ -1,5 +1,4 @@
 import React from "react";
-
 const MovieDetails = () => {
   return (
     <div className="movie-details">
@@ -25,7 +24,7 @@ const MovieDetails = () => {
           </div>
           <div className="movie-details__info">
             <h1 className="movie-details__name">
-              Bad Boys 3<span className="movie-details__year">(2020)</span>
+              Avengers<span className="movie-details__year">(2020)</span>
             </h1>
             <div className="movie-details__facts">
               <span className="movie-details__release">25/04/2019</span>

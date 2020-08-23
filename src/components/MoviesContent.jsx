@@ -2,7 +2,6 @@ import React from "react";
 import { MovieItem, Preloader } from "./index";
 
 const MoviesContent = ({ movies, isFetching }) => {
-  console.log(movies);
   return (
     <div className="movies__wrap">
       {isFetching ? (
