@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovieDetails } from "../redux/actions/details";
-import img from "../assets/img/backgroundImage.jpg";
 const MovieDetails = ({ match }) => {
+  //
   let dispatch = useDispatch();
+  //
   React.useEffect(() => {
     dispatch(fetchMovieDetails(match.params.id));
   }, [dispatch, match.params.id]);
-
+  //
   const details = useSelector(({ details }) => details);
-
   return (
     <div className="movie-details">
       <div
@@ -22,7 +22,6 @@ const MovieDetails = ({ match }) => {
           backgroundSize: `cover`,
         }}
       >
-        {/* {console.log(details.background)} */}
         <div className="movie-details__top-wrapper">
           <div className="movie-details__poster">
             <img
@@ -30,7 +29,6 @@ const MovieDetails = ({ match }) => {
               src={`https://image.tmdb.org/t/p/w500/${details.posterPath}`}
               alt=""
             />
-            {/* "https://image.tmdb.org/t/p/w500/tqXiOD5rTyHgabO73Tpw9JDbd88.jpg" */}
           </div>
           <div className="movie-details__info">
             <h1 className="movie-details__name">
@@ -40,7 +38,7 @@ const MovieDetails = ({ match }) => {
             <div className="movie-details__facts">
               <span className="movie-details__release">{details.date}</span>
               <span className="movie-details__genres">{details.genres}.</span>
-              <span className="movie-details__runtime">3h 2m</span>
+              <span className="movie-details__runtime">{details.time} m.</span>
             </div>
             <div className="movie-details__rating">{details.average}</div>
             <span className="movie-details__tagline">{details.tagline}</span>

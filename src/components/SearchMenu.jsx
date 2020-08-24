@@ -2,7 +2,7 @@ import React from "react";
 import { fetchMovies } from "../redux/actions/search";
 import { useDispatch } from "react-redux";
 
-function SearchMenu() {
+function SearchMenu({ currentPage }) {
   const dispatch = useDispatch();
 
   //React Hooks
@@ -14,7 +14,7 @@ function SearchMenu() {
   };
 
   const onClickButton = () => {
-    dispatch(fetchMovies(inputValue));
+    dispatch(fetchMovies(inputValue, currentPage));
   };
 
   return (
