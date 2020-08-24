@@ -3,7 +3,7 @@ const defaultState = {
   title: "",
   year: null,
   date: null,
-  genres: [],
+  genres: "",
   time: null,
   average: null,
   tagline: "",
@@ -11,31 +11,57 @@ const defaultState = {
   backgroundPath: "",
   posterPath: "",
   productionCompanies: [],
-  productionCountry: [],
+  productionCountries: [],
 };
 
 const details = (state = defaultState, action) => {
   switch (action.type) {
     case "SET_MOVIE_DETAILS":
-      let year = action.payload.release_date.split("");
+      let year = action.payload.release_date.split("-")[0];
+      let genres = Object.values(action.payload.genres)
+        .reduce((s, i) => {
+          s += i.name + ", ";
+          return s;
+        }, "")
+        .replace(/,\s*$/, "");
+
+      let productionCompanies = Object.values(
+        action.payload.production_companies
+      )
+        .reduce((s, i) => {
+          s += i.name + ", ";
+          return s;
+        }, "")
+        .replace(/,\s*$/, "");
+
+      let productionCountries = Object.values(
+        action.payload.production_countries
+      )
+        .reduce((s, i) => {
+          s += i.name + ", ";
+          return s;
+        }, "")
+        .replace(/,\s*$/, "");
+
+      let backgroundPath = `https://image.tmdb.org/t/p/original${action.payload.backdrop_path}`;
+
       return {
         ...state,
         id: action.payload.id,
-        title: action.payload.id,
-        year: year[0],
+        title: action.payload.title,
+        year: year,
         date: action.payload.release_date,
-        genres: action.payload.genres,
+        genres: genres,
+        time: action.payload.runtime,
         average: action.payload.vote_average,
         tagline: action.payload.tagline,
         overview: action.payload.overview,
-        backgroundPath: action.payload.backdrop_path,
+        backgroundPath: backgroundPath,
         posterPath: action.payload.poster_path,
-        productionCompanies: action.payload.production_companies,
-        productionCountry: action.payload.production_countries,
+        productionCompanies: productionCompanies,
+        productionCountries: productionCountries,
       };
-      {
-        console.log(action);
-      }
+
     default:
       return {
         ...state,
