@@ -1,13 +1,6 @@
 import React from "react";
-import { SortPopup } from "../components";
 import { fetchMovies } from "../redux/actions/search";
 import { useDispatch } from "react-redux";
-// items in SortPopup component
-
-const items = [
-  { name: "Popular", type: " popular" },
-  { name: "Rating", type: "rating" },
-];
 
 function SearchMenu() {
   const dispatch = useDispatch();
@@ -26,7 +19,6 @@ function SearchMenu() {
 
   return (
     <>
-      <SortPopup items={items} />
       <div className="search-block">
         <input
           type="text"
