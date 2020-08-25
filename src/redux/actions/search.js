@@ -22,8 +22,9 @@ export const setCurrentPage = (page) => ({
 
 export const fetchMovies = (searchValue, pageNumber) => (dispatch) => {
   dispatch(isFetching(true));
-  dispatch(setCurrentPage(pageNumber));
+
   dispatch(setInputValue(searchValue));
+  dispatch(setCurrentPage(pageNumber));
   // AXIOS GET request.
   // if searchValue is empty,we search 'TOP POPULAR' movies, otherwise we do usual request.
 

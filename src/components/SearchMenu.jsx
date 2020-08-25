@@ -17,6 +17,12 @@ function SearchMenu({ currentPage }) {
     dispatch(fetchMovies(inputValue, currentPage));
   };
 
+  const onKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onClickButton();
+    }
+  };
+
   return (
     <>
       <div className="search-block">
@@ -26,6 +32,7 @@ function SearchMenu({ currentPage }) {
           placeholder="Search"
           value={inputValue}
           onChange={onChangeInputValue}
+          onKeyDown={onKeyDown}
         />
         <div className="search-block__button" onClick={() => onClickButton()}>
           <svg

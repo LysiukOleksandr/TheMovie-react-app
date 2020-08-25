@@ -3,7 +3,7 @@ const defaultState = {
   isFetching: false,
   inputValue: "",
   totalPages: 0,
-  currenPage: 1,
+  currentPage: 1,
 };
 
 const search = (state = defaultState, action) => {

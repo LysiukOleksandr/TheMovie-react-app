@@ -26,7 +26,7 @@ const MovieDetails = ({ match }) => {
           <div className="movie-details__poster">
             <img
               className="movie-details__image"
-              src={`https://image.tmdb.org/t/p/w500/${details.posterPath}`}
+              src={details.posterPath}
               alt=""
             />
           </div>

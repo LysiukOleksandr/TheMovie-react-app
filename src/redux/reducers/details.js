@@ -44,7 +44,7 @@ const details = (state = defaultState, action) => {
         .replace(/,\s*$/, "");
 
       let backgroundPath = `https://image.tmdb.org/t/p/original${action.payload.backdrop_path}`;
-
+      let posterPath = `https://image.tmdb.org/t/p/w500/${action.payload.poster_path}`;
       return {
         ...state,
         id: action.payload.id,
@@ -57,7 +57,7 @@ const details = (state = defaultState, action) => {
         tagline: action.payload.tagline,
         overview: action.payload.overview,
         backgroundPath: backgroundPath,
-        posterPath: action.payload.poster_path,
+        posterPath: posterPath,
         productionCompanies: productionCompanies,
         productionCountries: productionCountries,
       };

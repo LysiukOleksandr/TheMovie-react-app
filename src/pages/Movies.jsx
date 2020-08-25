@@ -9,11 +9,12 @@ const Movies = () => {
   const currentPage = useSelector(({ search }) => search.currentPage);
   const totalPages = useSelector(({ search }) => search.totalPages);
   const searchValue = useSelector(({ search }) => search.inputValue);
-  //
+
   React.useEffect(() => {
-    dispatch(fetchMovies("", currentPage));
+    dispatch(fetchMovies(searchValue, currentPage));
   }, [dispatch, currentPage]);
-  const nextPage = (pageNumber) => {
+
+  const onPageChanged = (pageNumber) => {
     dispatch(fetchMovies(searchValue, pageNumber));
   };
 
@@ -26,7 +27,7 @@ const Movies = () => {
         <MoviesContent movies={movies} isFetching={isFetching} />
         <Pagination
           pages={totalPages}
-          nextPage={nextPage}
+          onPageChanged={onPageChanged}
           currentPage={currentPage}
         />
       </div>
