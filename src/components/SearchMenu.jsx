@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { fetchMovies } from "../redux/actions/search";
 import { useDispatch } from "react-redux";
 
@@ -74,5 +75,12 @@ function SearchMenu({ currentPage }) {
   );
 }
 
-// { name: "Alphabete", type: "alphabete" },
+SearchMenu.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+};
+
+SearchMenu.defaultProps = {
+  currentPage: 1,
+};
+
 export default SearchMenu;

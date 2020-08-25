@@ -1,5 +1,5 @@
 const defaultState = {
-  movies: [],
+  movies: [1],
   isFetching: false,
   inputValue: "",
   totalPages: 0,

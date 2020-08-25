@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { MovieItem, Preloader } from "./index";
 
 const MoviesContent = ({ movies, isFetching }) => {
@@ -14,6 +15,16 @@ const MoviesContent = ({ movies, isFetching }) => {
       )}
     </div>
   );
+};
+
+MoviesContent.propTypes = {
+  movies: PropTypes.array.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+};
+
+MoviesContent.defaultProps = {
+  movies: [],
+  isFetching: true,
 };
 
 export default MoviesContent;

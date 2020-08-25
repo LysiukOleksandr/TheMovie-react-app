@@ -1,5 +1,10 @@
 import React from "react";
-import { SearchMenu, MoviesContent, Pagination } from "../components";
+import {
+  SearchMenu,
+  MoviesContent,
+  Pagination,
+  MoviesEmpty,
+} from "../components";
 import { fetchMovies } from "../redux/actions/search";
 import { useSelector, useDispatch } from "react-redux";
 const Movies = () => {
@@ -12,7 +17,7 @@ const Movies = () => {
 
   React.useEffect(() => {
     dispatch(fetchMovies(searchValue, currentPage));
-  }, [dispatch, currentPage]);
+  }, [dispatch, currentPage, searchValue]);
 
   const onPageChanged = (pageNumber) => {
     dispatch(fetchMovies(searchValue, pageNumber));
@@ -24,7 +29,11 @@ const Movies = () => {
         <SearchMenu currentPage={currentPage} />
       </div>
       <div className="container">
-        <MoviesContent movies={movies} isFetching={isFetching} />
+        {movies.length === 0 ? (
+          <MoviesEmpty />
+        ) : (
+          <MoviesContent movies={movies} isFetching={isFetching} />
+        )}
         <Pagination
           pages={totalPages}
           onPageChanged={onPageChanged}

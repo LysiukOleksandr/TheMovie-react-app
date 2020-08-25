@@ -43,8 +43,16 @@ const details = (state = defaultState, action) => {
         }, "")
         .replace(/,\s*$/, "");
 
-      let backgroundPath = `https://image.tmdb.org/t/p/original${action.payload.backdrop_path}`;
-      let posterPath = `https://image.tmdb.org/t/p/w500/${action.payload.poster_path}`;
+      let backgroundPath = `https://image.tmdb.org/t/p/original${
+        action.payload.backdrop_path
+          ? action.payload.backdrop_path
+          : "/tzve3LD534wsCnhOrSqgJ1mnRma.jpg"
+      }`;
+      let posterPath = `https://image.tmdb.org/t/p/w500${
+        action.payload.poster_path
+          ? action.payload.poster_path
+          : "/tzve3LD534wsCnhOrSqgJ1mnRma.jpg"
+      }`;
       return {
         ...state,
         id: action.payload.id,

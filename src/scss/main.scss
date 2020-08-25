@@ -8,7 +8,7 @@
 @import "./components/movies.scss";
 @import "./components/pagination.scss";
 @import "./components/preloader.scss";
-
+@import "./components//movies-empty.scss";
 // @import "~@openfonts/baloo-tamma-2_kannada/index.css";
 // @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;600;800&display=swap");
 .container {
@@ -19,26 +19,4 @@
 
 .--open {
   display: block;
-}
-
-//movies-empty
-.movies-empty {
-  &__title {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 1.4rem;
-    font-weight: 400;
-  }
-  &__image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
-  }
-
-  &__subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
 }

@@ -5,3 +5,4 @@ export { default as MoviesContent } from "./MoviesContent";
 export { default as MovieItem } from "./MovieItem";
 export { default as Preloader } from "./Preloader";
 export { default as Pagination } from "./Pagination";
+export { default as MoviesEmpty } from "./MoviesEmpty";

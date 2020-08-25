@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 const MovieItem = ({
   id,
@@ -28,6 +29,21 @@ const MovieItem = ({
       </div>
     </div>
   );
+};
+
+MovieItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  rating: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+};
+
+MovieItem.defaultProps = {
+  title: "Title",
+  poster: "Poster",
+  rating: "0",
+  date: "0000-00-00",
 };
 
 export default MovieItem;
