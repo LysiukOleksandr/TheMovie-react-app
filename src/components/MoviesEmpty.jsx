@@ -27,9 +27,9 @@ const MoviesEmpty = () => {
               gradientTransform="translate(-3.62 1.57)"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stop-color="gray" stop-opacity="0.25" />
-              <stop offset="0.54" stop-color="gray" stop-opacity="0.12" />
-              <stop offset="1" stop-color="gray" stop-opacity="0.1" />
+              <stop offset="0" stopColor="gray" stopOpacity="0.25" />
+              <stop offset="0.54" stopColor="gray" stopOpacity="0.12" />
+              <stop offset="1" stopColor="gray" stopOpacity="0.1" />
             </linearGradient>
             <linearGradient
               id="0ee1ab3f-7ba2-4205-9d4a-9606ad702253"

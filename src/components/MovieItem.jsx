@@ -32,7 +32,6 @@ const MovieItem = ({
 };
 
 MovieItem.propTypes = {
-  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
   rating: PropTypes.string.isRequired,
